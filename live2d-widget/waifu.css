@@ -1,0 +1,332 @@
+/* ====================================================================================
+* 文件名称：waifu.css
+* 文件说明：live2d所有CSS样式文件
+* ===================================================================================== */
+/* 开启Live2D模型提示方框的属性 */
+#waifu-toggle {
+	background-color: rgba(25, 82, 189, 0.774); /* background-color属性设置一个元素的背景颜色 */
+	border-radius: 5px;        /* border-radius 属性允许为元素添加圆角边框 */
+	bottom: 80px;              /* 对于绝对定位元素，bottom属性设置单位高于/低于包含它的元素的底边。
+						          对于相对定位元素，bottom属性设置单位高于/低于其正常位置的元素的底边。 */
+	color: rgba(255, 255, 255, 0.774);      /* Color 属性指定文本的颜色。 */
+	cursor: pointer;           /* cursor 属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状 pointer：一只手*/
+	font-size: 12px;           /* font-size 属性用于设置字体大小 */
+	left: 0px;                 /* left 属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。 */
+	margin-left: -100px;       /* margin-left属性设置元素的左边距。这里的-100决定了模型显示的时候看板娘方框的位置*/
+	padding: 5px 2px 5px 5px;  /* padding 简写属性在一个声明中设置所有填充属性。修改这里可以修改框中字的位置 */
+	position: fixed;           /* position 属性指定一个元素（静态的，相对的，绝对或固定）的定位方法的类型。 
+								  fiexd表示生成固定定位的元素，相对于浏览器窗口进行定位。
+								  元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。*/
+	transition: margin-left 1s;/* transition 属性设置元素当过渡效果 */
+	width: 60px;               /* width属性设置元素的宽度 */
+	writing-mode: vertical-rl; /* writing-mode 属性定义了文本在水平或垂直方向上如何排布。 */
+}
+
+/* 鼠标未放置在开启Live2D模型提示方框上的时候的位置 */
+#waifu-toggle.waifu-toggle-active {
+	margin-left: -50px;        /* margin-left属性设置元素的左边距。*/
+}
+
+/* 鼠标放置在开启Live2D模型提示方框上的时候的位置 */
+#waifu-toggle.waifu-toggle-active:hover {
+	margin-left: -30px;        /* margin-left属性设置元素的左边距。*/
+}
+
+/* Live2D模型属性设置 */
+#waifu {
+	bottom: -1000px;          /* 对于绝对定位元素，bottom属性设置单位高于/低于包含它的元素的底边。
+						         对于相对定位元素，bottom属性设置单位高于/低于其正常位置的元素的底边。 */
+	left: 30px;               /* left 属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。
+							     将这里改为right可以以右边为基准进行设置位置 */
+	line-height: 0;           /* line-height 属性设置行高，相当于设置行间距*/
+	margin-bottom: 2px;       /* margin-bottom 属性设置元素的下边距。 */
+	position: fixed;          /* position 属性指定一个元素（静态的，相对的，绝对或固定）的定位方法的类型。 
+							     fiexd表示生成固定定位的元素，相对于浏览器窗口进行定位。
+							     元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。*/
+	transform: translateY(3px); /* Transform属性应用于元素的2D或3D转换。这个属性允许你将元素旋转，缩放，移动，倾斜等 */
+	transition: transform .3s ease-in-out, bottom 3s ease-in-out; 
+	z-index: 1;               /* z-index 属性指定一个元素的堆叠顺序。 */                 
+}
+
+#waifu:hover {
+	transform: translateY(0); /* Transform属性应用于元素的2D或3D转换。这个属性允许你将元素旋转，缩放，移动，倾斜等 */
+}
+
+/* Live2D模型上方对话框设置 */
+#waifu-tips {
+	animation: shake 50s ease-in-out 5s infinite;  /* 动画属性 */
+	background-color: rgba(119, 176, 209, 0.5);  /* background-color属性设置一个元素的背景颜色 */
+	border: 1px solid rgba(119, 176, 209, .62);  /* border 缩写边框属性设置在一个声明中所有的边框属性。 */ 
+	border-radius: 12px;                           /* border-radius 属性是一个最多可指定四个 border -*- radius 属性的复合属性,这个属性允许为元素添加圆角边框！*/          
+	box-shadow: 0 3px 15px 2px rgba(191, 158, 118, .2); /* box-shadow属性可以设置一个或多个下拉阴影的框。 */
+	font-size: 13px;                               /* font-size 属性用于设置字体大小 */
+	line-height: 24px;                             /* line-height 属性设置行高，相当于设置行间距 */
+	margin: -30px 20px;                            /* margin 简写属性在一个声明中设置所有外边距属性。*/
+	min-height: 70px;                              /* min-height 属性设置元素的最低高度。 */            
+	opacity: 0;                                    /* Opacity属性设置一个元素了透明度级别。 */
+	overflow: hidden;                              /* overflow属性指定如果内容溢出一个元素的框，会发生什么。*/
+	padding: 5px 10px;                             /* padding 简写属性在一个声明中设置所有填充属性。 */
+	position: absolute;                            /* position 属性指定一个元素（静态的，相对的，绝对或固定）的定位方法的类型。 
+													  生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+													  元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。*/
+	text-overflow: ellipsis;                       /* text-overflow属性指定当文本溢出包含它的元素，应该发生什么。*/
+	transition: opacity 1s;                        /* transition 属性设置元素的过渡效果 */
+	width: 250px;                                  /* width属性设置元素的宽度。 */
+	word-break: break-all;                         /* word-break属性指定非CJK脚本的断行规则。break-all表示允许在单词内换行。*/
+}
+
+#waifu-tips.waifu-tips-active {
+	opacity: 1;
+	transition: opacity .2s;
+}
+
+#waifu-tips span {
+	color: #0099cc;
+}
+
+#waifu #live2d {
+	cursor: grab;
+	height: 300px;
+	position: relative;
+	width: 300px;
+}
+
+#waifu #live2d:active {
+	cursor: grabbing;
+}
+
+/* Live2D模型边上的小工具 */
+#waifu-tool {
+	color: #aaa;                 /* Color 属性指定文本的颜色。 */
+	opacity: 0;                    /* Opacity属性设置一个元素了透明度级别。 */
+	position: absolute;            /* position 属性指定一个元素（静态的，相对的，绝对或固定）的定位方法的类型。 
+									  生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+									  元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。*/
+	right: -10px;                   /* right 属性规定元素的右边缘。该属性定义了定位元素右外边距边界与其包含块右边界之间的偏移,            
+									  将这里改为left可以以右边为基准进行设置位置 */
+	top: 70px;                     /* top 属性规定元素的顶部边缘。该属性定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。*/
+	transition: opacity 1s;        /* transition 属性设置元素当过渡效果 */
+}
+
+#waifu:hover #waifu-tool {
+	opacity: 1;
+}
+
+#waifu:hover #waifu-tool {
+	opacity: 1;
+}
+
+#waifu-tool span {
+	color: #7b8c9d;
+	cursor: pointer;
+	display: block;
+	line-height: 30px;
+	text-align: center;
+	transition: color .3s;
+}
+
+#waifu-tool span:hover {
+	color: #0684bd; /* #34495e */
+}
+
+@keyframes shake {
+	2% {
+		transform: translate(.5px, -1.5px) rotate(-.5deg);
+	}
+
+	4% {
+		transform: translate(.5px, 1.5px) rotate(1.5deg);
+	}
+
+	6% {
+		transform: translate(1.5px, 1.5px) rotate(1.5deg);
+	}
+
+	8% {
+		transform: translate(2.5px, 1.5px) rotate(.5deg);
+	}
+
+	10% {
+		transform: translate(.5px, 2.5px) rotate(.5deg);
+	}
+
+	12% {
+		transform: translate(1.5px, 1.5px) rotate(.5deg);
+	}
+
+	14% {
+		transform: translate(.5px, .5px) rotate(.5deg);
+	}
+
+	16% {
+		transform: translate(-1.5px, -.5px) rotate(1.5deg);
+	}
+
+	18% {
+		transform: translate(.5px, .5px) rotate(1.5deg);
+	}
+
+	20% {
+		transform: translate(2.5px, 2.5px) rotate(1.5deg);
+	}
+
+	22% {
+		transform: translate(.5px, -1.5px) rotate(1.5deg);
+	}
+
+	24% {
+		transform: translate(-1.5px, 1.5px) rotate(-.5deg);
+	}
+
+	26% {
+		transform: translate(1.5px, .5px) rotate(1.5deg);
+	}
+
+	28% {
+		transform: translate(-.5px, -.5px) rotate(-.5deg);
+	}
+
+	30% {
+		transform: translate(1.5px, -.5px) rotate(-.5deg);
+	}
+
+	32% {
+		transform: translate(2.5px, -1.5px) rotate(1.5deg);
+	}
+
+	34% {
+		transform: translate(2.5px, 2.5px) rotate(-.5deg);
+	}
+
+	36% {
+		transform: translate(.5px, -1.5px) rotate(.5deg);
+	}
+
+	38% {
+		transform: translate(2.5px, -.5px) rotate(-.5deg);
+	}
+
+	40% {
+		transform: translate(-.5px, 2.5px) rotate(.5deg);
+	}
+
+	42% {
+		transform: translate(-1.5px, 2.5px) rotate(.5deg);
+	}
+
+	44% {
+		transform: translate(-1.5px, 1.5px) rotate(.5deg);
+	}
+
+	46% {
+		transform: translate(1.5px, -.5px) rotate(-.5deg);
+	}
+
+	48% {
+		transform: translate(2.5px, -.5px) rotate(.5deg);
+	}
+
+	50% {
+		transform: translate(-1.5px, 1.5px) rotate(.5deg);
+	}
+
+	52% {
+		transform: translate(-.5px, 1.5px) rotate(.5deg);
+	}
+
+	54% {
+		transform: translate(-1.5px, 1.5px) rotate(.5deg);
+	}
+
+	56% {
+		transform: translate(.5px, 2.5px) rotate(1.5deg);
+	}
+
+	58% {
+		transform: translate(2.5px, 2.5px) rotate(.5deg);
+	}
+
+	60% {
+		transform: translate(2.5px, -1.5px) rotate(1.5deg);
+	}
+
+	62% {
+		transform: translate(-1.5px, .5px) rotate(1.5deg);
+	}
+
+	64% {
+		transform: translate(-1.5px, 1.5px) rotate(1.5deg);
+	}
+
+	66% {
+		transform: translate(.5px, 2.5px) rotate(1.5deg);
+	}
+
+	68% {
+		transform: translate(2.5px, -1.5px) rotate(1.5deg);
+	}
+
+	70% {
+		transform: translate(2.5px, 2.5px) rotate(.5deg);
+	}
+
+	72% {
+		transform: translate(-.5px, -1.5px) rotate(1.5deg);
+	}
+
+	74% {
+		transform: translate(-1.5px, 2.5px) rotate(1.5deg);
+	}
+
+	76% {
+		transform: translate(-1.5px, 2.5px) rotate(1.5deg);
+	}
+
+	78% {
+		transform: translate(-1.5px, 2.5px) rotate(.5deg);
+	}
+
+	80% {
+		transform: translate(-1.5px, .5px) rotate(-.5deg);
+	}
+
+	82% {
+		transform: translate(-1.5px, .5px) rotate(-.5deg);
+	}
+
+	84% {
+		transform: translate(-.5px, .5px) rotate(1.5deg);
+	}
+
+	86% {
+		transform: translate(2.5px, 1.5px) rotate(.5deg);
+	}
+
+	88% {
+		transform: translate(-1.5px, .5px) rotate(1.5deg);
+	}
+
+	90% {
+		transform: translate(-1.5px, -.5px) rotate(-.5deg);
+	}
+
+	92% {
+		transform: translate(-1.5px, -1.5px) rotate(1.5deg);
+	}
+
+	94% {
+		transform: translate(.5px, .5px) rotate(-.5deg);
+	}
+
+	96% {
+		transform: translate(2.5px, -.5px) rotate(-.5deg);
+	}
+
+	98% {
+		transform: translate(-1.5px, -1.5px) rotate(-.5deg);
+	}
+
+	0%, 100% {
+		transform: translate(0, 0) rotate(0);
+	}
+}

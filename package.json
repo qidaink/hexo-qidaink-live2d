@@ -1,0 +1,27 @@
+{
+  "name": "hexo-qidaink-live2d",
+  "version": "1.0.0",
+  "description": "The live2d model of Cloud and Sea.",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qidaink/hexo-qidaink-live2d.git"
+  },
+  "keywords": [
+    "live2d",
+    "widget",
+    "next"
+  ],
+  "author": "qidaink",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qidaink/hexo-qidaink-live2d/issues"
+  },
+  "homepage": "https://github.com/qidaink/hexo-qidaink-live2d#readme"
+}

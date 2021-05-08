@@ -1,0 +1,63 @@
+/* =============================================== */
+/* header标签样式 */   
+header 
+{
+  width: 100%; /* 设置元素的宽度,注意：width属性不包括填充，边框和页边距！*/
+  text-align: center; /* 居中 */
+}
+/* =============================================== */
+/* h1标签样式 */
+h1
+{
+  font-size: 2.5rem;
+  font-family: papyrus;
+  letter-spacing: 3px; /* 属性增加或减少字符间的空白（字符间距）*/
+  padding-top: 50px;   /* 设置一个元素的顶部填充（空格）*/
+  text-shadow: 3px  3px 0 rgba(0, 162, 255, 0.753), 
+              -1px -1px 0 rgba(0, 162, 255, 0.753), 
+                1px -1px 0 rgba(0, 162, 255, 0.753),
+              -1px  1px 0 rgba(0, 162, 255, 0.753), 
+                1px  1px 0 rgba(0, 162, 255, 0.753);   /* 阴影文本 */
+}
+/* =============================================== */
+/* body标签样式 */
+body 
+{
+  background-color:rgba(255, 255, 255, 0.5); /* 背景颜色及透明度 */
+  background-image: url(../images/background.jpg);/* 背景图片路径 */
+  background-repeat:no-repeat;   /* 背景图片位置 */
+  background-position:center;    /* 背景图片位置 */
+  background-size: 1920px 1280px;/* 背景图片大小 */
+}
+/* =============================================== */
+/* <a>标签样式 */
+a{
+  color: #0593d3;  /* 超链接颜色 */  
+  font-weight: bold; /* 设置文本的粗细 bold为粗体*/
+  font-style: italic;/* 文本的字体样式为斜体 */
+  border-bottom: 1px solid #0593d3; /* 设置一个声明中所有底部边框属性 solid指定实线边框 */
+  text-decoration: none; /* 规定添加到文本的修饰，下划线、上划线、删除线等 */
+}
+/* <a>标签鼠标悬停样式 */
+a:hover {
+  color: #fc6423;  /* 超链接颜色 */
+  font-weight: bold; /* 设置文本的粗细 bold为粗体*/
+  font-style: italic;/* 文本的字体样式为斜体 */
+  border-bottom: 1px solid #fc6423; /* 设置一个声明中所有底部边框属性 solid指定实线边框 */
+  text-decoration : none /* 规定添加到文本的修饰，下划线、上划线、删除线等 */
+}
+/* =============================================== */
+/* wrapper对象框样式 */ 
+.wrapper 
+{
+  background-color:rgba(69, 194, 243, 0.479); /* 背景颜色及透明度 */      
+  padding: 30px;    /* 填充属性 */
+  max-width: 500px; /* 设置段落的最大宽度 */
+  font-family: "Times New Roman", Times, serif;  /* 指定段落的字体 */
+  text-align: justify; /* 设置文本的对齐方式 justify:实现两端对齐文本效果 */
+  text-indent: 30px;    /* 设置文本的首行缩进 */
+  font-size: 1rem;     /* 设置文本的大小 */
+  line-height: 1.5rem; /* 设置行高 浏览器的默认的font-size是16px，1rem默认就等于16px*/
+  margin: auto;        /* 外边距属性属性 */
+}
+/* =============================================== */
