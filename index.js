@@ -13,7 +13,7 @@
 hexo.config.myliverd = Object.assign({
   enable: false,
   local: false,
-  cdnPath: "https://unpkg.com/hexo-qidaink-live2d@latest/live2d-widget/autoload.js"
+  cdnPath: "https://unpkg.com/hexo-qidaink-live2d@1.1.0/live2d-widget/autoload.js"
 }, hexo.config.myliverd);
 const live2d_config = hexo.config.myliverd;
 

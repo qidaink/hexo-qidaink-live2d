@@ -15,7 +15,7 @@
 // const live2d_path = "/live2d-widget/";  
 
 /* 3.在Hexo站点引用 CDN 链接 */
-const live2d_path = "https://unpkg.com/hexo-qidaink-live2d@latest/live2d-widget/";
+const live2d_path = "https://unpkg.com/hexo-qidaink-live2d@1.1.0/live2d-widget/";
 
 /*----------------------------------------------------------------------*/
 // 封装异步加载资源的方法

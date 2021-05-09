@@ -70,7 +70,7 @@ function loadWidget(config) {
 				window.ASTEROIDSPLAYERS.push(new Asteroids());
 			} else {
 				const script = document.createElement("script");
-				script.src = "https://unpkg.com/hexo-qidaink-live2d@latest/live2d-widget/asteroids.js";
+				script.src = "https://unpkg.com/hexo-qidaink-live2d@1.1.0/live2d-widget/asteroids.js";
 				document.head.appendChild(script);
 			}
 		});
